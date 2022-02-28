@@ -10,10 +10,17 @@ jobs:
 steps:
       - checkout
     
+      - run:
+          name: build dependencies
+          command: bundle install
+          
+      - run: 
+          name: bild the jekyll site
+          command bundle exec jekyll build
     
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Say something"
+          command: "echo Hello, something!"
 
 
       - run:
